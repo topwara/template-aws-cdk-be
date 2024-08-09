@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  backend:
+    container_name: backend
+    build: .
+    image: cdk-node18.19
+    volumes:
+      - .:/workdir
+    working_dir: /workdir
+    ports:
+      - 3000:3000
+    command: bash
+    tty: true

@@ -1,0 +1,39 @@
+# package directories
+node_modules
+jspm_packages
+
+# Serverless directories
+.serverless
+.webpack/
+
+**/.DS_Store
+
+# This is for introspection
+graphql.schema.json
+
+.env
+.idea
+.DS_STORE
+.eslintcache
+*.swp
+*~
+/node_modules
+
+coverage
+coverage.txt
+junit.xml
+
+generated.ts
+
+.awscredentials
+.awsconfig
+
+
+*.js
+!jest.config.js
+*.d.ts
+node_modules
+
+# CDK asset staging directory
+.cdk.staging
+cdk.out
