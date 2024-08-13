@@ -8,9 +8,9 @@ import { envTable } from '../config/type'
 import { EResponseStatus, responseFormatHttp } from '../utils/http'
 import { dynamodbUpdate, dynamoDBUpdateFromAttributes } from '../utils/dyanamoDb'
 
-// => hello
+// => post
 export const lambdaHandler = async (event: APIGatewayProxyEvent): Promise<APIGatewayProxyResult> => {
-  console.log('---------- START | helloHandler ----------')
+  console.log('---------- START | postHandler ----------')
 
   const env = envTable(process.env)
   if (typeof env === 'string') return responseFormatHttp(EResponseStatus.ERROR, { error: env })
@@ -19,20 +19,20 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent): Promise<APIGat
     const dateNow = new Date().toISOString()
 
     const params: DocumentClient.UpdateItemInput = {
-      TableName: process.env.USER_TABLE_NAME as string,
+      TableName: env.POST_TABLE_NAME as string,
       Key: {
         companyID: 'DAB_01',
-        userID: 'USR_01',
+        postID: 'POS_01',
       },
-      ...dynamoDBUpdateFromAttributes({ createdAt: dateNow }, ['companyID', 'userID']),
+      ...dynamoDBUpdateFromAttributes({ createdAt: dateNow }, ['companyID', 'postID']),
     }
 
     await dynamodbUpdate(db, params)
 
-    console.log('----------  END  | helloHandler | Success ----------')
-    return responseFormatHttp(EResponseStatus.SUCCESS, { msg: '👍 Success update userTable' })
+    console.log('----------  END  | postHandler | Success ----------')
+    return responseFormatHttp(EResponseStatus.SUCCESS, { msg: '👍 Success update postTable' })
   } catch (error) {
-    console.log('----------  END  | helloHandler | Error ----------', error)
+    console.log('----------  END  | postHandler | Error ----------', error)
     return responseFormatHttp(EResponseStatus.ERROR, { error: error })
   }
 }

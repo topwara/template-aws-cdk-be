@@ -1,8 +1,8 @@
 #!/usr/bin/env node
 
 // Lib
-import 'source-map-support/register'
 import * as cdk from 'aws-cdk-lib'
+import 'source-map-support/register'
 
 // Include
 import { CdkStack } from '../lib/cdk-stack'
