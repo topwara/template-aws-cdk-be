@@ -30,7 +30,7 @@ export const lambdaHandler = async (event: APIGatewayProxyEvent): Promise<APIGat
     await dynamodbUpdate(db, params)
 
     console.log('----------  END  | helloHandler | Success ----------')
-    return responseFormatHttp(EResponseStatus.SUCCESS, { msg: '👍 Success update userTable' })
+    return responseFormatHttp(EResponseStatus.SUCCESS, { msg: '👍 Success update userTable ⭐⭐⭐' })
   } catch (error) {
     console.log('----------  END  | helloHandler | Error ----------', error)
     return responseFormatHttp(EResponseStatus.ERROR, { error: error })

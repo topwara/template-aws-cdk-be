@@ -1,6 +1,8 @@
+import { TStage } from '../utils/type'
+
 export const APP_NAME = 'template-aws-cdk-be-stack'
 
-export const STAGE: 'dev' | 'prod' = 'dev'
+export const STAGE: TStage = 'dev'
 
 export const ACCESS_TOKEN_SECRET = 'F,,XwMyZ+H`&Uh8~'
 export const ACCESS_TOKEN_LIFE = '1d'

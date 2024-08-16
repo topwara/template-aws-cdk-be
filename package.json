@@ -5,6 +5,7 @@
     "cdk": "bin/cdk.js"
   },
   "scripts": {
+    "dev": "npx nodemon src/index.ts",
     "deploy": "cdk synth && cdk deploy",
     "generate": "graphql-codegen --config codegenNonAuth.yml"
   },
@@ -16,7 +17,7 @@
     "@graphql-tools/jest-transform": "^2.0.0",
     "@types/jest": "^29.5.12",
     "@types/jsonwebtoken": "^9.0.6",
-    "@types/node": "^20.14.9",
+    "@types/node": "^20.14.15",
     "aws-cdk": "^2.150.0",
     "esbuild": "^0.23.0",
     "graphql-tag": "^2.12.6",
@@ -27,19 +28,21 @@
     "typescript": "~5.5.3"
   },
   "dependencies": {
-    "prettier": "^3.3.3",
     "@aws-sdk/lib-dynamodb": "^3.623.0",
+    "@fastify/aws-lambda": "^4.1.0",
     "@graphql-tools/utils": "^10.3.3",
     "@types/aws-lambda": "^8.10.142",
     "apollo-server-lambda": "^3.13.0",
     "aws-cdk-lib": "2.150.0",
     "aws-sdk": "^2.1667.0",
     "constructs": "^10.0.0",
+    "fastify": "^4.28.1",
     "graphql": "^16.9.0",
     "graphql-scalars": "^1.23.0",
     "graphql-tools": "^9.0.1",
     "js-base64": "^3.7.7",
     "jsonwebtoken": "^9.0.2",
+    "prettier": "^3.3.3",
     "source-map-support": "^0.5.21",
     "ts-loader": "^9.5.1"
   }
