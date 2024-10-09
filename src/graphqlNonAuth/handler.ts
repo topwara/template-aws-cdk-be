@@ -21,9 +21,9 @@ import HelloResolver from './resolvers/Hello.resolver'
 
 // ========== ========== ========== ========== ==========
 
-const typeDefs = mergeTypeDefs([IndexSDL, GlobalSDL, HelloSDL])
+export const typeDefs = mergeTypeDefs([IndexSDL, GlobalSDL, HelloSDL])
 
-const resolvers = [HelloResolver as IResolvers, { JSON: GraphQLJSON }]
+export const resolvers = [HelloResolver as IResolvers, { JSON: GraphQLJSON }]
 
 const server = new ApolloServer({
   typeDefs: typeDefs,

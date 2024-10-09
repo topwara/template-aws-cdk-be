@@ -5,7 +5,7 @@
     "cdk": "bin/cdk.js"
   },
   "scripts": {
-    "dev": "npx nodemon src/index.ts",
+    "dev": "npx nodemon --watch src src/index.ts",
     "deploy": "cdk synth && cdk deploy",
     "generate": "graphql-codegen --config codegenNonAuth.yml"
   },
@@ -28,6 +28,8 @@
     "typescript": "~5.5.3"
   },
   "dependencies": {
+    "@apollo/server": "^4.11.0",
+    "@as-integrations/fastify": "^2.1.1",
     "@aws-sdk/lib-dynamodb": "^3.623.0",
     "@fastify/aws-lambda": "^4.1.0",
     "@graphql-tools/utils": "^10.3.3",
